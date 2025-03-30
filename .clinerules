@@ -1,0 +1,133 @@
+# Home Chef Hero - Project Intelligence
+
+## Database Patterns
+
+1. **Primary Keys**: All tables use UUID primary keys with `uuid_generate_v4()` as the default value.
+   ```sql
+   id UUID PRIMARY KEY DEFAULT uuid_generate_v4()
+   ```
+
+2. **Foreign Keys**: All foreign keys include `ON DELETE` actions, typically `CASCADE` for child records or `SET NULL` for optional references.
+   ```sql
+   user_id UUID REFERENCES users(id) ON DELETE CASCADE
+   ```
+
+3. **Timestamps**: All tables that track creation time use `TIMESTAMP WITH TIME ZONE DEFAULT NOW()`.
+   ```sql
+   created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+   ```
+
+4. **Flexible Data**: JSONB is used for flexible data structures like preferences and instructions.
+   ```sql
+   dietary_preferences JSONB DEFAULT '{}'::JSONB
+   ```
+
+5. **Junction Tables**: Many-to-many relationships use junction tables with their own UUIDs and unique constraints.
+   ```sql
+   UNIQUE(user_id, achievement_id)
+   ```
+
+6. **Indexing Strategy**: Indexes are created for columns frequently used in WHERE clauses and for foreign keys.
+   ```sql
+   CREATE INDEX idx_cooking_logs_user ON cooking_logs(user_id);
+   ```
+
+## Naming Conventions
+
+1. **Table Names**: Use plural nouns in snake_case (e.g., `users`, `recipes`, `cooking_logs`).
+
+2. **Column Names**: Use snake_case for column names (e.g., `first_name`, `created_at`).
+
+3. **Junction Tables**: Name as `[table1]_[table2]` in singular-to-plural form (e.g., `user_achievements`).
+
+4. **Index Names**: Format as `idx_[table]_[column]` (e.g., `idx_recipes_difficulty`).
+
+5. **Foreign Keys**: Name as the singular form of the referenced table plus `_id` (e.g., `user_id`, `recipe_id`).
+
+6. **Boolean Columns**: Prefix with `is_` or `has_` (e.g., `is_active`, `is_from_user`).
+
+## Project Structure
+
+1. **Database Schema**: Located in `backend/scripts.sql`.
+
+2. **Memory Bank**: Located in `memory-bank/` directory with core files:
+   - `projectbrief.md`: Project overview and requirements
+   - `productContext.md`: Why the project exists and problems it solves
+   - `systemPatterns.md`: Architecture and design patterns
+   - `techContext.md`: Technologies and development setup
+   - `activeContext.md`: Current work focus and decisions
+   - `progress.md`: Project status and next steps
+
+## Implementation Patterns
+
+1. **Gamification System**:
+   - XP is awarded for cooking activities, completing challenges, and earning achievements
+   - User level is determined by total XP points
+   - Streaks are tracked for consecutive days of cooking activity
+
+2. **AI Assistant**:
+   - Conversations are organized into sessions
+   - Messages can reference specific recipes or ingredients
+   - Context is stored as JSONB for flexibility
+
+3. **Recipe Management**:
+   - Recipes have difficulty levels that affect XP rewards
+   - Instructions are stored as JSONB for flexible formatting
+   - Ingredients are linked through a junction table with quantities and units
+
+## Critical Implementation Paths
+
+1. **User Authentication Flow**:
+   - Supabase Auth handles authentication
+   - After auth, create/update record in `users` table
+   - Link to `user_preferences` and `user_streaks`
+
+2. **Recipe Creation Flow**:
+   - Create recipe record
+   - Add ingredients (create if not exists)
+   - Link ingredients to recipe with quantities
+   - Upload and link images
+
+3. **Cooking Activity Logging**:
+   - Create cooking log entry
+   - Award XP to user
+   - Update user level if threshold reached
+   - Update streak information
+   - Check and award achievements
+   - Check and complete challenges
+
+4. **AI Conversation Flow**:
+   - Create or continue conversation session
+   - Store user message
+   - Generate AI response
+   - Store AI response
+   - Update session context
+   - Link to relevant entities (recipes, ingredients)
+
+## Known Challenges
+
+1. **Recipe Versioning**: Need to determine approach for handling user modifications to recipes.
+
+2. **XP Balance**: Need to establish appropriate XP rewards and level thresholds for engagement.
+
+3. **AI Context Management**: Need to implement effective context tracking for the AI assistant.
+
+4. **Performance with UUIDs**: Need to ensure proper indexing for UUID-based queries.
+
+## Evolution of Project Decisions
+
+1. **Initial Schema**: Started with core tables for users, recipes, and ingredients.
+
+2. **Gamification Addition**: Added achievements, challenges, and streaks for engagement.
+
+3. **AI Integration**: Added conversation tables to support the AI cooking assistant feature.
+
+## Tool Usage Patterns
+
+1. **Supabase**: Primary backend service for database, auth, storage, and functions.
+
+2. **PostgreSQL**: Database with advanced features like JSONB and row-level security.
+
+3. **React**: Frontend framework with TypeScript for type safety.
+
+4. **AI Service**: Will integrate with external AI service for cooking assistant.
