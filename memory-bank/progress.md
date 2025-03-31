@@ -1,4 +1,4 @@
-# Home Chef Hero - Progress Tracker
+# Chefy - Progress Tracker
 
 ## Project Status Overview
 

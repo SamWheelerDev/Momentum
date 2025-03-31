@@ -1,8 +1,8 @@
-# Home Chef Hero - System Patterns
+# Chefy - System Patterns
 
 ## System Architecture
 
-Home Chef Hero follows a modern client-server architecture with a clear separation of concerns:
+Chefy follows a modern client-server architecture with a clear separation of concerns:
 
 ```mermaid
 flowchart TD

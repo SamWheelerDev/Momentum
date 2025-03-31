@@ -1,93 +1,44 @@
-I'll create a focused plan for your Home Chef Hero MVP based on the outline, with a Postgres data model for Supabase. Let's streamline this to focus only on essential features needed to demonstrate the core concept.
+# Chefy
 
-# Home Chef Hero - MVP Implementation Plan
+A gamified cooking application that helps users improve their cooking skills through daily challenges, achievements, and an AI cooking assistant.
 
-## MVP Core Features
+## Project Overview
 
-1. **Essential Gamification Elements**
-   - Daily cooking challenges
-   - Basic achievement badges
-   - Simple XP system for cooking activities
-   - Progress visualization dashboard
+Chefy is designed to make cooking more engaging and accessible by:
+- Gamifying the cooking experience with challenges and rewards
+- Offering personalized recipe recommendations
+- Providing an AI assistant for cooking guidance
+- Tracking progress and skill development
 
-2. **Basic AI Cooking Assistant**
-   - Recipe recommendations based on preferences
-   - Ingredient substitution suggestions
-   - Simple Q&A about cooking techniques
+## Quick Start
 
-3. **Core Utility Features**
-   - Basic recipe database with search functionality
-   - Simple meal planning calendar
-   - User profile with cooking preferences
+1. **Setup Backend**
+   - Install dependencies: `pip install -r requirements.txt`
+   - Configure Supabase settings
+   - Run database migrations
 
-## Technical Architecture
+2. **Setup Frontend**
+   - Navigate to the frontend directory: `cd frontend`
+   - Install dependencies: `npm install`
+   - Start the development server: `npm start`
 
-### Postgres Data Model for Supabase
+For detailed setup instructions, see the [backend documentation](docs/backend.md).
 
-### API Endpoints (Supabase Functions)
+## Documentation
 
-## MVP Development Phases
+- [Technical Architecture](docs/architecture.md) - System design and database models
+- [Frontend Documentation](docs/frontend.md) - UI design and components
+- [Backend Documentation](docs/backend.md) - Server setup and API endpoints
+- [MVP Implementation Plan](docs/mvp_plan.md) - Development roadmap and feature priorities
+- [Business Model](docs/business_model.md) - Monetization strategy
 
+## Contributing
 
+We welcome contributions to Chefy! Please follow these steps:
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
 
-## Frontend Design
+## License
 
-### User Interface Priorities
-
-1. **User Dashboard**
-   - Daily challenges
-   - Cooking streak visualization
-   - Level and XP progress
-   - Recent achievements
-
-2. **Recipe Browser**
-   - Searchable recipe cards
-   - Difficulty indicators
-   - Time and XP rewards clearly displayed
-   - Filtering by ingredients, time, and difficulty
-
-3. **Cooking Mode**
-   - Step-by-step instructions
-   - Simple timer integration
-   - Basic Q&A support
-   - Completion logging
-
-4. **Achievement Center**
-   - Unlocked and locked achievements
-   - Progress indicators
-   - XP history
-
-### Recommended Tech Stack
-
-* **Frontend**: React with TypeScript (or React Native for mobile)
-* **Backend**: Supabase (PostgreSQL + Functions)
-* **Authentication**: Supabase Auth
-* **File Storage**: Supabase Storage
-* **State Management**: React Context or Redux
-* **UI Components**: Material UI or Tailwind CSS
-
-## MVP Business Model
-
-For the MVP, focus on validating the core concept before implementing the full monetization strategy:
-
-1. **Free access to all MVP features**
-2. **Collect emails for future premium upgrades**
-3. **User engagement metrics to demonstrate potential**
-
-## Testing & Validation Plan
-
-1. Recruit 15-20 beta testers matching target audience
-2. Define key success metrics:
-   - Daily active users
-   - Average cooking sessions per week
-   - Challenge completion rate
-   - User retention after 2 weeks
-
-## Launch Timeline
-
-* **Development**: 10 weeks
-* **Testing**: 2 weeks
-* **Refinement**: 1 week
-* **Soft Launch**: Week 14
-
-This MVP plan focuses on demonstrating the core value proposition of Home Chef Hero with minimal features while laying the groundwork for future expansion. The Postgres data model is optimized for Supabase and designed to support your essential gamification and recipe features.
+See the [LICENSE](LICENSE) file for details.

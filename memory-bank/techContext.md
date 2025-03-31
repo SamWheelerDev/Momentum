@@ -1,4 +1,4 @@
-# Home Chef Hero - Technical Context
+# Chefy - Technical Context
 
 ## Technologies Used
 

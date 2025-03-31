@@ -1,8 +1,8 @@
-# Home Chef Hero - Active Context
+# Chefy - Active Context
 
 ## Current Work Focus
 
-The current focus is on establishing the foundational data model for the Home Chef Hero application. We've created a comprehensive PostgreSQL schema that supports the core features outlined in the MVP:
+The current focus is on establishing the foundational data model for the Chefy application. We've created a comprehensive PostgreSQL schema that supports the core features outlined in the MVP:
 
 1. **User Management System**
    - User profiles with preferences
