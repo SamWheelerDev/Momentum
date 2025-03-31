@@ -1,8 +1,8 @@
-# Home Chef Hero - Product Context
+# Chefy - Product Context
 
 ## Why This Project Exists
 
-Home Chef Hero addresses several key problems in the home cooking space:
+Chefy addresses several key problems in the home cooking space:
 
 1. **Motivation Gap**: Many people want to cook more but struggle with motivation and consistency. Traditional cooking apps focus on recipes but don't address the psychological barriers to regular cooking.
 

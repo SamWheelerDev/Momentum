@@ -1,7 +1,7 @@
-# Home Chef Hero - Project Brief
+# Chefy - Project Brief
 
 ## Project Overview
-Home Chef Hero is a gamified cooking application designed to make home cooking more engaging, rewarding, and educational through gamification elements and AI assistance. The app transforms the cooking experience by adding game-like elements such as challenges, achievements, and progression systems to motivate users to cook more frequently and try new recipes.
+Chefy is a gamified cooking application designed to make home cooking more engaging, rewarding, and educational through gamification elements and AI assistance. The app transforms the cooking experience by adding game-like elements such as challenges, achievements, and progression systems to motivate users to cook more frequently and try new recipes.
 
 ## Core Objectives
 1. Increase user engagement with cooking through gamification
